@@ -9,6 +9,7 @@ import { FileOpener, FileOpenerOptions } from '@capacitor-community/file-opener'
 
 // MODELS
 import { FILE_OPENER_PLUGIN_ERRORS } from '../models/base';
+import { StatusBar } from '@capacitor/status-bar';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,12 @@ import { FILE_OPENER_PLUGIN_ERRORS } from '../models/base';
 })
 export class HomePage {
 
-  constructor() { }
+  constructor() {
+    console.log("HELLO");
+
+    StatusBar.setBackgroundColor({color: "#d9534f"});
+    StatusBar.setOverlaysWebView({overlay: false});
+  }
 
   public async openFile(): Promise<void> {
 
